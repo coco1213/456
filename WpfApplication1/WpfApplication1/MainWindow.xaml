@@ -7,15 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Grid  Name="MainGrid"  Margin="3,138,3,3" >
-            <Grid.Background>
-                <ImageBrush ImageSource="桌面"/>
-            </Grid.Background>
-            <ScrollViewer >
-                <ContentControl x:Name="MainContentControl1" Margin="0" Content="{Binding MainCntCtl}" />
-            </ScrollViewer>
-            </Grid> 
-            <StackPanel Margin="20" Width="400">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="C:\gi\WpfApplication1\WpfApplication1\Properties\FFFFFFFF.jpg"/>
+        </Grid.Background>
+        <StackPanel Margin="20" Width="400">
             <!-- Height -->
             <Canvas Width="400" Height="50" Background="Cyan" >
                 <Border CornerRadius="10" Background="Orange" Canvas.Top="0" Canvas.Left="0" x:Name="Height">
