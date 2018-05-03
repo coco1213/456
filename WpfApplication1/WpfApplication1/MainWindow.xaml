@@ -7,17 +7,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <StackPanel Margin="20" Width="400">
+        <Grid  Name="MainGrid"  Margin="3,138,3,3" >
+            <Grid.Background>
+                <ImageBrush ImageSource="桌面"/>
+            </Grid.Background>
+            <ScrollViewer >
+                <ContentControl x:Name="MainContentControl1" Margin="0" Content="{Binding MainCntCtl}" />
+            </ScrollViewer>
+            </Grid> 
+            <StackPanel Margin="20" Width="400">
             <!-- Height -->
-            <Canvas Width="400" Height="50" Background="LightGray">
+            <Canvas Width="400" Height="50" Background="Cyan" >
                 <Border CornerRadius="10" Background="Orange" Canvas.Top="0" Canvas.Left="0" x:Name="Height">
                     <TextBlock Canvas.Top="0" Canvas.Left="0" x:Name="HeightNumber" Width="80" TextAlignment="Center" Padding="0 5">100</TextBlock>
                 </Border>
             </Canvas>
             <Slider Minimum="0" Maximum="200" x:Name="HeightSlider" ValueChanged="HeightSlider_ValueChanged"></Slider>
             <!-- Weight -->
-            <TextBlock x:Name="WeightNumber">100</TextBlock>
-            <Slider></Slider> 
+            <Canvas Width="400" Height="50" Background="Cyan">
+                <Border CornerRadius="10" Background="Orange" Canvas.Top="0" Canvas.Left="0" x:Name="Weight">
+                    <TextBlock Canvas.Top="0" Canvas.Left="0" x:Name="WeightNumber" Width="80" TextAlignment="Center" Padding="0 5">100</TextBlock>
+                </Border>
+            </Canvas>
+            <Slider Minimum="0" Maximum="100" x:Name="WeightSlider" ValueChanged="WeightSlider_ValueChanged_1"></Slider> 
             <!-- BMI -->
             <StackPanel Orientation="Horizontal">
                 <TextBlock FontSize="40" x:Name="BmiNumber1">29</TextBlock>

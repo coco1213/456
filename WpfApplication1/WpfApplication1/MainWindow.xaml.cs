@@ -44,5 +44,24 @@ namespace WpfApplication1
             else
                 BmiNumber2.Text = ".0";
         }
+
+        private void WeightSlider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            double value = Math.Round(WeightSlider.Value, 1);
+            WeightNumber.Text = value.ToString();
+            double a = (value / 100) * 320;
+            Canvas.SetLeft(Weight, a);
+
+            double h = double.Parse(HeightNumber.Text);
+            double w = double.Parse(WeightNumber.Text);
+            double bmi = w / Math.Pow((h / 100), 2);
+
+            string[] parts = bmi.ToString().Split('.');
+            BmiNumber1.Text = parts[0];
+            if (parts.Length > 1)
+                BmiNumber2.Text = "." + parts[1];
+            else
+                BmiNumber2.Text = ".0";
+        }
     }
 }
